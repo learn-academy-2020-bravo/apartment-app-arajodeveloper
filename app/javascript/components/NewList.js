@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import PropTypes from "prop-types"
 
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap'
 import { Link, Redirect } from 'react-router-dom'
@@ -22,7 +21,7 @@ const NewList = props => {
     image_path: ""
   })
 
-  const pushLists = (newList) => {
+  const pushLists = newList => {
     fetch("http://localhost:3000/apartments", {
       body: JSON.stringify(newList),
       headers: {
