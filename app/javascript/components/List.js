@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Link from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class List extends Component {
   render() {
@@ -13,7 +13,7 @@ class List extends Component {
               {
                 return (
                 <li key={idx}>
-                  <a href={'/details/' + idx}>{apart.address}</a>
+                  <Link to={'/details/' + idx}>{apart.address}</Link>
                 </li>)
               })
             }

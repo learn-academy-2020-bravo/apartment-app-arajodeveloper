@@ -8,7 +8,7 @@ import NewList from './NewList'
 
 const App = props => {
   //Create an empty array to hold all the cats
-  const [newApartments, setNewApartments] = useState([])
+  const [apartments, setNewApartments] = useState([])
   const {
     logged_in,
     sign_in_route,
@@ -22,14 +22,14 @@ const App = props => {
   async function grabApartments () {
     try {
       //GET data from the backend
-      let response = await fetch("http://localhost:3000/apartments")
+      let response = await fetch("http://localhost:3000/listing")
       let data = await response.json();
       //all good?
       if(response.status === 200) {
         //check the console to make sure we have all the cats
         console.log("data", data)
         //populate the newCats state array with data
-        setApartments(data)
+        setNewApartments(data)
       }
     } catch (err) {
         console.log(err)
@@ -38,7 +38,7 @@ const App = props => {
 
   return (
    <Router>
-         <h2>Sign In to See the Listing of Available Apartments in San Diego</h2>
+         <h2>Available Apartments in San Diego</h2>
         <Switch>
           <Route
             path='/details/:id'

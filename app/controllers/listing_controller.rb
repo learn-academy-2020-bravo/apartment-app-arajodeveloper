@@ -1,4 +1,4 @@
-class ApartmentController < ApplicationController
+class ListingController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update, :destroy]
   
 
