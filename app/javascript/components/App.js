@@ -6,6 +6,7 @@ import List from './List'
 import NewList from './NewList'
 
 
+
 const App = props => {
   //Create an empty array to hold all the cats
   const [apartments, setNewApartments] = useState([])
@@ -35,6 +36,7 @@ const App = props => {
         console.log(err)
     }
   }
+
 
   return (
    <Router>

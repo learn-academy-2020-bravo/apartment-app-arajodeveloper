@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import PropTypes from "prop-types"
+
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap'
 import { Link, Redirect } from 'react-router-dom'
 
@@ -30,8 +32,9 @@ const NewList = props => {
     })
     .then((response) => {
       if (response.ok) setSuccess(true)
-      else if (!response.ok) setError(true)
-      else return response.json()
+      else setError(true)
+    }).catch(error => {
+      console.log("error:",error)
     })
   }
 
@@ -55,7 +58,6 @@ const NewList = props => {
      
       <h4 className="subtitle">Create a New Listing</h4>
 
-      {error && <h4 className="error-message">Please fill out the form correctly.</h4>}
 
       <Form className="form-wrapper">
         <FormGroup>
@@ -124,6 +126,8 @@ const NewList = props => {
               onChange={ handleChange }
             />
         </FormGroup>
+
+        {error && <h4 className="error-message">Please fill out the form correctly.</h4>}
 
         <Link to="/apartments">
           <Button
