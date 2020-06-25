@@ -13,7 +13,7 @@ const App = props => {
     logged_in,
     sign_in_route,
     sign_out_route
-  } = this.props
+  } = props
   //useEffect hook lets us GET all cats from the database when the component loads
   //the empty array after the comma means that it will get triggered automatically only once
   useEffect(() =>{
