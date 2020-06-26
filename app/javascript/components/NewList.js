@@ -22,8 +22,8 @@ const NewList = props => {
   })
 
   const pushLists = newList => {
-    fetch("http://localhost:3000/apartments", {
-      body: JSON.stringify(newList),
+    fetch("http://localhost:3000/listing", {
+      body: JSON.stringify({apartment: newList}),
       headers: {
         "Content-Type": "application/json"
       },
