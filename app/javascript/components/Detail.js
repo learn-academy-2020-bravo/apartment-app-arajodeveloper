@@ -1,5 +1,4 @@
-import React from "react"
-
+import React, { useState, useEffect } from "react"
 
 class Detail extends React.Component {
   constructor(props) {
@@ -10,6 +9,7 @@ class Detail extends React.Component {
       var theId = this.props.match.params.id
       console.log(this.props)
       console.log(this.props.apartments)
+
       return (
         <React.Fragment>
             <ul>
@@ -23,7 +23,10 @@ class Detail extends React.Component {
               <li>image_path: { this.props.apartments[theId].image_path }</li>
             </ul>
 
+           
+
             <a href={'/apartments'}>Back to Listing</a>
+
 
         
         </React.Fragment>

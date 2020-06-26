@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import Detail from './Detail'
 import List from './List'
 import NewList from './NewList'
+// import Edit from './Edit'
 
 
 
@@ -60,6 +61,12 @@ const App = props => {
               <NewList {...props} apartments={apartments} />
             )}
             />
+            {/* <Route
+            path='/details/:id/edit'
+            render={(props) =>(
+              <Edit {...props} apartments={apartments} />
+            )}
+            /> */}
         </Switch>
         <div>
         {logged_in &&
